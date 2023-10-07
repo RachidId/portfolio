@@ -109,8 +109,8 @@ const Product = () => {
 
       {addingProd && <div className="bg-[white] border absolute transform left-1/2 top-1/2 -translate-x-1/2 translate-y-[-50%] p-6 rounded-xl w-[50%]">
         <div className="flex items-center justify-between">
-          <h1>Add product</h1>
-          <button onClick={()=>dispatch(toggleAdd())}> <MdOutlineCancel /> </button>
+          <h1 className="text-[20px] font-bold">Add product</h1>
+          <button onClick={()=>dispatch(toggleAdd())} className="text-[30px]"> <MdOutlineCancel /> </button>
         </div>
         <div className="flex items-center justify-between">
           <div className="grid grid-cols-1 w-[49%]">
