@@ -7,11 +7,11 @@ import { toggleAdd } from "../../features/functionsSlice";
 
 const Product = () => {
   const products = useSelector((state) => state.products.products);
-  const addingProd = useSelector((state) => state.functions.functions.addingProd);
+  const addingProd = useSelector((state) => state.functions.addingProd);
   const dispatch = useDispatch();
   useEffect(()=>{
     console.log(addingProd)
-  }, [])
+  }, [addingProd])
   const [data, setData] = useState(products);
   // const [addingProd, setAddingProd] = useState(true);
   const getStatusClassName = (status) => {
@@ -34,7 +34,7 @@ const Product = () => {
             <h3 className="me-4">10/07/2023</h3>
           </div>
           <div>
-            <form className="flex justify-end items-center">
+            <div className="flex justify-end items-center">
               <input
                 type="text"
                 className="border w-[20%] py-2 rounded-md px-2"
@@ -43,10 +43,10 @@ const Product = () => {
               <select className="ms-5 w-[20%] py-2 rounded-md px-2">
                 <option value="">Filter By Category</option>
               </select>
-              <button className="bg-main ms-5 flex items-center justify-evenly w-[20%] rounded-md py-2 text-[#fff]" onClick={()=>dispatch(toggleAdd)}>
+              <button className="bg-main ms-5 flex items-center justify-evenly w-[20%] rounded-md py-2 text-[#fff]" onClick={()=>dispatch(toggleAdd())}>
                 Add new product <FaPlus />
               </button>
-            </form>
+            </div>
           </div>
         </div>
 
@@ -110,27 +110,27 @@ const Product = () => {
       {addingProd && <div className="bg-[white] border absolute transform left-1/2 top-1/2 -translate-x-1/2 translate-y-[-50%] p-6 rounded-xl w-[50%]">
         <div className="flex items-center justify-between">
           <h1>Add product</h1>
-          <button> <MdOutlineCancel /> </button>
+          <button onClick={()=>dispatch(toggleAdd())}> <MdOutlineCancel /> </button>
         </div>
         <div className="flex items-center justify-between">
-          <div className="grid grid-cols-1">
-            <button className="border border-dashed">add</button>
-            <input type="text" className="border rounded-md p-1 py-1 mb-3" placeholder="Quantity"/>
-            <input type="text" className="border rounded-md p-1 py-1 mb-3" placeholder="Per Price"/>
-            <div>
+          <div className="grid grid-cols-1 w-[49%]">
+            <button className="border border-dashed w-[80%] px-1 py-20 mb-3 rounded-lg">add</button>
+            <input type="text" className="border rounded-md px-1 py-1 mb-3 w-[80%]" placeholder="Quantity"/>
+            <input type="text" className="border rounded-md px-1 py-1 mb-3 w-[80%]" placeholder="Per Price"/>
+            <div className="w-[70%]">
                 <input type="checkbox" id="active"/>
-                <label htmlFor="active">Active</label>
+                <label htmlFor="active" className="ms-2 me-7">Active</label>
                 <input type="checkbox" id="draft"/>
-                <label htmlFor="draft">Draft</label>
+                <label htmlFor="draft" className="ms-2">Draft</label>
             </div>
           </div>
-          <div className="text-start">
-            <input type="text" placeholder="Product Name" className="border rounded-md p-1 py-1 mb-3"/>
-            <div className="flex items-center justify-around mb-3">
-              <select name="" id="" className="border rounded-md p-1 py-1">
+          <div className="text-start w-[49%]">
+            <input type="text" placeholder="Product Name" className="border rounded-md p-1 py-1 mb-3 w-[80%]"/>
+            <div className="flex items-center justify-start mb-3 w-[70%]">
+              <select name="" id="" className="border rounded-md px-1 py-1 me-4">
                 <option value="" >Product Category</option>
               </select>
-              <select name="" id="" className="border rounded-md p-1 py-1">
+              <select name="" id="" className="border rounded-md px-1 py-1">
                 <option value="">Sub Category</option>
               </select>
             </div>
@@ -140,7 +140,7 @@ const Product = () => {
               cols="30"
               rows="10"
               placeholder="Product Description"
-              className="border rounded-md p-1 py-1 mb-3"
+              className="border rounded-md p-1 py-1 mb-3 w-[80%]"
             ></textarea>
             <div>
               <button className="bg-main px-2 rounded-md py-2 me-20">Publish</button>

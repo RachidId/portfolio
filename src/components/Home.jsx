@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Outlet } from 'react-router-dom'
 
 const Home = () => {
-  const addingProd = useSelector((state) => state.functions.functions.addingProd);
+  const addingProd = useSelector((state) => state.functions.addingProd);
   useEffect(()=>{
     console.log(addingProd)
   }, [])

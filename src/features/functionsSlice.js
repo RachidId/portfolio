@@ -1,10 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-	functions: {
-        addingProd: false,
-        editingProd: false
-    }
+    addingProd: false,
+    editingProd: false
 };
 
 export const functionsSlice = createSlice({
@@ -12,10 +10,10 @@ export const functionsSlice = createSlice({
 	initialState,
 	reducers: {
 		toggleAdd: (state) =>  { 
-            return {...state, addingProd: !addingProd}
+            return {...state, addingProd: !state.addingProd}
         },
 		toggleEdit: (state) =>  { 
-            return {...state, editingProd: !editingProd}
+            return {...state, editingProd: !state.editingProd}
         }
 	},
 });
