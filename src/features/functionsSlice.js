@@ -20,6 +20,6 @@ export const functionsSlice = createSlice({
 	},
 });
 
-export const { toggleAdd, toggleEdit } = productSlice.actions;
+export const { toggleAdd, toggleEdit } = functionsSlice.actions;
 
 export default functionsSlice.reducer;

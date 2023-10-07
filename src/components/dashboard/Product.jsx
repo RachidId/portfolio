@@ -3,12 +3,17 @@ import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { FaPlus } from "react-icons/fa";
 import {MdOutlineCancel} from "react-icons/md";
+import { toggleAdd } from "../../features/functionsSlice";
 
 const Product = () => {
   const products = useSelector((state) => state.products.products);
+  const addingProd = useSelector((state) => state.functions.functions.addingProd);
   const dispatch = useDispatch();
+  useEffect(()=>{
+    console.log(addingProd)
+  }, [])
   const [data, setData] = useState(products);
-  const [addingProd, setAddingProd] = useState(true);
+  // const [addingProd, setAddingProd] = useState(true);
   const getStatusClassName = (status) => {
     switch (status) {
       case "live":
@@ -38,7 +43,7 @@ const Product = () => {
               <select className="ms-5 w-[20%] py-2 rounded-md px-2">
                 <option value="">Filter By Category</option>
               </select>
-              <button className="bg-main ms-5 flex items-center justify-evenly w-[20%] rounded-md py-2 text-[#fff]">
+              <button className="bg-main ms-5 flex items-center justify-evenly w-[20%] rounded-md py-2 text-[#fff]" onClick={()=>dispatch(toggleAdd)}>
                 Add new product <FaPlus />
               </button>
             </form>
