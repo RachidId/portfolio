@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
-import { FaPlus } from "react-icons/fa";
+import { FaCloudUploadAlt, FaPlus } from "react-icons/fa";
 import {MdOutlineCancel} from "react-icons/md";
 import { toggleAdd } from "../../features/functionsSlice";
 
@@ -114,7 +114,11 @@ const Product = () => {
         </div>
         <div className="flex items-center justify-between">
           <div className="grid grid-cols-1 w-[49%]">
-            <button className="border border-dashed w-[80%] px-1 py-20 mb-3 rounded-lg">add</button>
+            <button className="border-2 border-dashed w-[80%] px-1 py-20 mb-3 rounded-lg flex flex-col items-center">
+                <FaCloudUploadAlt className="text-[40px]"/>
+                <span >upload product</span>
+                <span>image</span>
+            </button>
             <input type="text" className="border rounded-md px-1 py-1 mb-3 w-[80%]" placeholder="Quantity"/>
             <input type="text" className="border rounded-md px-1 py-1 mb-3 w-[80%]" placeholder="Per Price"/>
             <div className="w-[70%]">
