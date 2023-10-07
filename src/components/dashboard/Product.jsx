@@ -114,13 +114,13 @@ const Product = () => {
         </div>
         <div className="flex items-center justify-between">
           <div className="grid grid-cols-1 w-[49%]">
-            <button className="border-2 border-dashed w-[80%] px-1 py-20 mb-3 rounded-lg flex flex-col items-center">
+            <button className="border-2 border-dashed w-[100%] px-1 py-20 mb-3 rounded-lg flex flex-col items-center">
                 <FaCloudUploadAlt className="text-[40px]"/>
                 <span >upload product</span>
                 <span>image</span>
             </button>
-            <input type="text" className="border rounded-md px-1 py-1 mb-3 w-[80%]" placeholder="Quantity"/>
-            <input type="text" className="border rounded-md px-1 py-1 mb-3 w-[80%]" placeholder="Per Price"/>
+            <input type="text" className="border rounded-md px-1 py-1 mb-3 w-[100%]" placeholder="Quantity"/>
+            <input type="text" className="border rounded-md px-1 py-1 mb-3 w-[100%]" placeholder="Per Price"/>
             <div className="w-[70%]">
                 <input type="checkbox" id="active"/>
                 <label htmlFor="active" className="ms-2 me-7">Active</label>
@@ -129,12 +129,12 @@ const Product = () => {
             </div>
           </div>
           <div className="text-start w-[49%]">
-            <input type="text" placeholder="Product Name" className="border rounded-md p-1 py-1 mb-3 w-[80%]"/>
-            <div className="flex items-center justify-start mb-3 w-[70%]">
-              <select name="" id="" className="border rounded-md px-1 py-1 me-4">
+            <input type="text" placeholder="Product Name" className="border rounded-md p-1 py-1 mb-3 mt-2 w-[100%]"/>
+            <div className="flex items-center mb-3 w-[100%]">
+              <select name="" id="" className="border rounded-md px-1 py-1 me-4 bg-[transparent] w-[49%]">
                 <option value="" >Product Category</option>
               </select>
-              <select name="" id="" className="border rounded-md px-1 py-1">
+              <select name="" id="" className="border rounded-md px-1 py-1 bg-[transparent] w-[49%]">
                 <option value="">Sub Category</option>
               </select>
             </div>
@@ -144,10 +144,10 @@ const Product = () => {
               cols="30"
               rows="10"
               placeholder="Product Description"
-              className="border rounded-md p-1 py-1 mb-3 w-[80%]"
+              className="border rounded-md p-1 py-1 mb-3 w-[100%]"
             ></textarea>
             <div>
-              <button className="bg-main px-2 rounded-md py-2 me-20">Publish</button>
+              <button className="bg-main px-2 rounded-md py-2 me-5">Publish</button>
               <button className="px-2 rounded-md py-2 border">Cancel</button>
             </div>
           </div>
