@@ -3,11 +3,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import {Link} from 'react-router-dom'
 import { FaCloudUploadAlt, FaPlus } from "react-icons/fa";
+import {AiFillCaretRight} from "react-icons/ai";
 import {MdOutlineCancel} from "react-icons/md";
 import { toggleAdd } from "../../features/functionsSlice";
 
 const Product = () => {
-  const products = useSelector((state) => state.products.products);
+  const products = useSelector((state) => state.data.products);
   const addingProd = useSelector((state) => state.functions.addingProd);
   const editingProd = useSelector((state) => state.functions.editingProd);
   const dispatch = useDispatch();
@@ -75,6 +76,9 @@ const Product = () => {
                   <th scope="col" class="px-6 py-3">
                     Status
                   </th>
+                  <th>
+
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -99,6 +103,9 @@ const Product = () => {
                         >
                           {e.status}
                         </p>
+                      </td>
+                      <td>
+                            <AiFillCaretRight />
                       </td>
                     </tr>
                   );
@@ -168,9 +175,9 @@ const Product = () => {
                 <span >upload product</span>
                 <span>image</span>
             </button>
-            <div className="flex items-center justify-start w-[90%]">
+            <div className="flex items-center justify-start w-[100%]">
               <input type="text" className="border rounded-md px-1 py-1 mb-3 w-[80%]" placeholder="Quantity"/>
-              <button className="px-1 py-1 bg-main rounded-md border-0 ms-3"><FaPlus /> </button>
+              <button className="px-2 py-2 bg-main rounded-md border-0 ms-3"><FaPlus /> </button>
             </div>
             
             <input type="text" className="border rounded-md px-1 py-1 mb-3 w-[100%]" placeholder="Per Price"/>

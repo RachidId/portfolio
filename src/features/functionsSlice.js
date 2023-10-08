@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     addingProd: false,
-    editingProd: true
+    editingProd: false,
+    detailOrder: false
 };
 
 export const functionsSlice = createSlice({
@@ -14,6 +15,9 @@ export const functionsSlice = createSlice({
         },
 		toggleEdit: (state) =>  { 
             return {...state, editingProd: !state.editingProd}
+        },
+        toggleEdit: (state) =>  { 
+            return {...state, detailOrder: !state.detailOrder}
         }
 	},
 });

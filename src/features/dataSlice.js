@@ -18,11 +18,20 @@ const initialState = {
         price: 2000,
         status: 'no-stock'
     }
-],
+    ],
+    orders:[
+        {
+            id: v4(),
+            customerName: 'customer 1',
+            date: '11/10/2022',
+            amount: 200,
+            status: 'new'
+        },
+    ] 
 };
 
-export const productSlice = createSlice({
-	name: "products",
+export const dataSlice = createSlice({
+	name: "data",
 	initialState,
 	reducers: {
 		add: (state, action) =>  { 
@@ -31,6 +40,6 @@ export const productSlice = createSlice({
 	},
 });
 
-export const { add } = productSlice.actions;
+export const { add } = dataSlice.actions;
 
-export default productSlice.reducer;
+export default dataSlice.reducer;
