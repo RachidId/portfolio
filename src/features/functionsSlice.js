@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     addingProd: false,
-    editingProd: false
+    editingProd: true
 };
 
 export const functionsSlice = createSlice({
