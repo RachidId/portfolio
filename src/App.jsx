@@ -4,7 +4,7 @@ import viteLogo from '/vite.svg'
 import SignIn from './components/signin/SignIn.jsx'
 import './App.css'
 import SideBar from './components/shopperDashboard/SideBar.jsx'
-import Home from './components/Home.jsx'
+import Shopper from './components/Shopper.jsx'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Product from './components/shopperDashboard/Product'
 import Dashboard from './components/shopperDashboard/Dashboard'
@@ -20,7 +20,7 @@ function App() {
       <Routes>
         <Route path='/' element={<SignIn />}/>
 
-        <Route path="/home" element={<Home />}>
+        <Route path="/shopper" element={<Shopper />}>
           <Route
             path="product"
             element={<Product />}

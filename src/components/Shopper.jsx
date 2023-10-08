@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { Outlet } from 'react-router-dom'
 
-const Home = () => {
+const Shopper = () => {
   const addingProd = useSelector((state) => state.functions.addingProd);
   useEffect(()=>{
     console.log(addingProd)
@@ -23,4 +23,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Shopper
