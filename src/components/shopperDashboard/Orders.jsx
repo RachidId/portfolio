@@ -1,11 +1,8 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useState } from "react";
-import {Link} from 'react-router-dom'
-import { FaCloudUploadAlt, FaPlus } from "react-icons/fa";
+
 import {AiFillCaretRight} from "react-icons/ai";
-import {MdOutlineCancel} from "react-icons/md";
-import { toggleAdd } from "../../features/functionsSlice";
+
 
 const Orders = () => {
     const orders = useSelector((state) => state.data.orders);
@@ -38,14 +35,11 @@ const Orders = () => {
                 <input
                   type="text"
                   className="border w-[20%] py-2 rounded-md px-2"
-                  placeholder="Search Product"
+                  placeholder="Search Customer"
                 />
-                <select className="ms-5 w-[20%] py-2 rounded-md px-2">
+                <select className="ms-5 w-[20%] py-2 rounded-md px-2 border">
                   <option value="">Filter By Category</option>
                 </select>
-                <button className="bg-main ms-5 flex items-center justify-evenly w-[20%] rounded-md py-2 text-[#fff]" onClick={()=>dispatch(toggleAdd())}>
-                  Add new product <FaPlus />
-                </button>
               </div>
             </div>
           </div>

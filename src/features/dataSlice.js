@@ -27,7 +27,17 @@ const initialState = {
             amount: 200,
             status: 'new'
         },
-    ] 
+    ],
+    customers: [
+        {
+            id: v4(),
+            customerName: 'customer 1',
+            customerEmail: 'fff@mail.com',
+            orderCount: 200,
+            successfulDeliveries: 30,
+            totalIncome: 400
+        },
+    ]
 };
 
 export const dataSlice = createSlice({

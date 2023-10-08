@@ -3,7 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     addingProd: false,
     editingProd: false,
-    detailOrder: false
+    detailOrder: false,
+    totalEarning:false
 };
 
 export const functionsSlice = createSlice({
@@ -16,8 +17,11 @@ export const functionsSlice = createSlice({
 		toggleEdit: (state) =>  { 
             return {...state, editingProd: !state.editingProd}
         },
-        toggleEdit: (state) =>  { 
+        toggledetailOrder: (state) =>  { 
             return {...state, detailOrder: !state.detailOrder}
+        },
+        toggletotalEarning: (state) =>  { 
+            return {...state, totalEarning: !state.totalEarning}
         }
 	},
 });

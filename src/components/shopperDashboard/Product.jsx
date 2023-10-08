@@ -43,7 +43,7 @@ const Product = () => {
                 className="border w-[20%] py-2 rounded-md px-2"
                 placeholder="Search Product"
               />
-              <select className="ms-5 w-[20%] py-2 rounded-md px-2">
+              <select className="ms-5 w-[20%] py-2 border rounded-md px-2">
                 <option value="">Filter By Category</option>
               </select>
               <button className="bg-main ms-5 flex items-center justify-evenly w-[20%] rounded-md py-2 text-[#fff]" onClick={()=>dispatch(toggleAdd())}>
