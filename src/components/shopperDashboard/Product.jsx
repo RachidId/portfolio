@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
+import {Link} from 'react-router-dom'
 import { FaCloudUploadAlt, FaPlus } from "react-icons/fa";
 import {MdOutlineCancel} from "react-icons/md";
 import { toggleAdd } from "../../features/functionsSlice";
@@ -8,6 +9,7 @@ import { toggleAdd } from "../../features/functionsSlice";
 const Product = () => {
   const products = useSelector((state) => state.products.products);
   const addingProd = useSelector((state) => state.functions.addingProd);
+  const editingProd = useSelector((state) => state.functions.editingProd);
   const dispatch = useDispatch();
   useEffect(()=>{
     console.log(addingProd)
@@ -148,6 +150,58 @@ const Product = () => {
             ></textarea>
             <div>
               <button className="bg-main px-2 rounded-md py-2 me-5">Publish</button>
+              <button className="px-2 rounded-md py-2 border">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>}
+
+      {editingProd && <div className="bg-[white] border absolute transform left-1/2 top-1/2 -translate-x-1/2 translate-y-[-50%] p-6 rounded-xl w-[50%]">
+        <div className="flex items-center justify-between">
+          <h1 className="text-[20px] font-bold">Edit product</h1>
+          <button onClick={()=>dispatch(toggleEdit())} className="text-[30px]"> <MdOutlineCancel /> </button>
+        </div>
+        <div className="flex items-center justify-between">
+          <div className="grid grid-cols-1 w-[49%]">
+            <button className="border-2 border-dashed w-[100%] px-1 py-20 mb-3 rounded-lg flex flex-col items-center">
+                <FaCloudUploadAlt className="text-[40px]"/>
+                <span >upload product</span>
+                <span>image</span>
+            </button>
+            <div className="flex items-center justify-start w-[90%]">
+              <input type="text" className="border rounded-md px-1 py-1 mb-3 w-[80%]" placeholder="Quantity"/>
+              <button className="px-1 py-1 bg-main rounded-md border-0 ms-3"><FaPlus /> </button>
+            </div>
+            
+            <input type="text" className="border rounded-md px-1 py-1 mb-3 w-[100%]" placeholder="Per Price"/>
+            <div className="w-[70%]">
+                <input type="checkbox" id="active"/>
+                <label htmlFor="active" className="ms-2 me-7">Active</label>
+                <input type="checkbox" id="draft"/>
+                <label htmlFor="draft" className="ms-2">Draft</label>
+            </div>
+          </div>
+          <div className="text-start w-[49%]">
+            <input type="text" placeholder="Product Name" className="border rounded-md p-1 py-1 mb-3 mt-2 w-[100%]"/>
+            <div className="flex items-center mb-3 w-[100%]">
+              <select name="" id="" className="border rounded-md px-1 py-1 me-4 bg-[transparent] w-[49%]">
+                <option value="" >Product Category</option>
+              </select>
+              <select name="" id="" className="border rounded-md px-1 py-1 bg-[transparent] w-[49%]">
+                <option value="">Sub Category</option>
+              </select>
+            </div>
+            <textarea
+              name=""
+              id=""
+              cols="30"
+              rows="10"
+              placeholder="Product Description"
+              className="border rounded-md p-1 py-1 mb-3 w-[100%]"
+            ></textarea>
+            <div>
+              <Link className="text-[red] me-5">delete</Link>
+              <button className="bg-main px-2 rounded-md py-2 me-5">Save</button>
               <button className="px-2 rounded-md py-2 border">Cancel</button>
             </div>
           </div>

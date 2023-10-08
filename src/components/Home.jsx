@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import SideBar from './dashboard/SideBar'
+import SideBar from './shopperDashboard/SideBar'
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { Outlet } from 'react-router-dom'
