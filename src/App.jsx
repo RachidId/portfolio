@@ -11,6 +11,7 @@ import Dashboard from './components/shopperDashboard/Dashboard'
 import Orders from './components/shopperDashboard/Orders'
 import Customers from './components/shopperDashboard/Customers'
 import CusChat from './components/shopperDashboard/CusChat'
+import Home from './components/Home'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<SignIn />}/>
+        <Route path='/home' element={<Home />}/>
 
         <Route path="/shopper" element={<Shopper />}>
           <Route
